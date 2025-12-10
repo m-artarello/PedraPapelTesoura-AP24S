@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.example.rps";
+option java_outer_classname = "RpsProto";
+
+package rps;
+
+enum Move {
+  MOVE_UNSPECIFIED = 0;
+  ROCK = 1;
+  PAPER = 2;
+  SCISSORS = 3;
+}
+
+message PlayRequest {
+  Move playerMove = 1;
+}
+
+message PlayResponse {
+  Move serverMove = 1;
+  string result = 2; // "VITÓRIA", "DERROTA" ou "EMPATE"
+}
+
+service RpsGame {
+  rpc Play (PlayRequest) returns (PlayResponse);
+}
