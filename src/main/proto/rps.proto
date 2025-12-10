@@ -7,10 +7,10 @@ option java_outer_classname = "RpsProto";
 package rps;
 
 enum Move {
-  MOVE_UNSPECIFIED = 0;
-  ROCK = 1;
-  PAPER = 2;
-  SCISSORS = 3;
+  NAO_ESPECIFICADO = 0;
+  PEDRA = 1;
+  PAPEL = 2;
+  TESOURA = 3;
 }
 
 message PlayRequest {
@@ -19,7 +19,7 @@ message PlayRequest {
 
 message PlayResponse {
   Move serverMove = 1;
-  string result = 2; // "VITÓRIA", "DERROTA" ou "EMPATE"
+  string result = 2;
 }
 
 service RpsGame {

@@ -71,6 +71,10 @@ public class RpsGameServer {
                     .setResult(result)
                     .build();
 
+            System.out.println("\nJogada do jogador: " + playerMove + "\nJogada do servidor: " + serverMove + "\nResultado: " + result);
+
+            System.out.println("\n===============================================================\n");
+
             responseObserver.onNext(response);
             responseObserver.onCompleted();
         }
@@ -79,17 +83,17 @@ public class RpsGameServer {
             int r = random.nextInt(3);
             switch (r) {
                 case 0:
-                    return Move.ROCK;
+                    return Move.PEDRA;
                 case 1:
-                    return Move.PAPER;
+                    return Move.PAPEL;
                 case 2:
                 default:
-                    return Move.SCISSORS;
+                    return Move.TESOURA;
             }
         }
 
         private String evaluate(Move player, Move server) {
-            if (player == Move.MOVE_UNSPECIFIED) {
+            if (player == Move.NAO_ESPECIFICADO) {
                 return "JOGADA INVÁLIDA";
             }
 
@@ -98,19 +102,15 @@ public class RpsGameServer {
             }
 
             // Regras:
-            // ROCK vence SCISSORS
-            // PAPER vence ROCK
-            // SCISSORS vence PAPER
-            switch (player) {
-                case ROCK:
-                    return (server == Move.SCISSORS) ? "VITÓRIA" : "DERROTA";
-                case PAPER:
-                    return (server == Move.ROCK) ? "VITÓRIA" : "DERROTA";
-                case SCISSORS:
-                    return (server == Move.PAPER) ? "VITÓRIA" : "DERROTA";
-                default:
-                    return "RESULTADO INDEFINIDO";
-            }
+            // PEDRA vence TESOURA
+            // PAPER vence PEDRA
+            // TESOURA vence PAPEL
+            return switch (player) {
+                case PEDRA -> (server == Move.TESOURA) ? "VITÓRIA" : "DERROTA";
+                case PAPEL -> (server == Move.PEDRA) ? "VITÓRIA" : "DERROTA";
+                case TESOURA -> (server == Move.PAPEL) ? "VITÓRIA" : "DERROTA";
+                default -> "RESULTADO INDEFINIDO";
+            };
         }
     }
 

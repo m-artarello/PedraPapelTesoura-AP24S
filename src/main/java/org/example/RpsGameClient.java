@@ -18,7 +18,7 @@ public class RpsGameClient {
     public RpsGameClient(String host, int port) {
         this.channel = ManagedChannelBuilder
                 .forAddress(host, port)
-                .usePlaintext() // sem TLS, vida loka em ambiente de teste
+                .usePlaintext()
                 .build();
         this.blockingStub = RpsGameGrpc.newBlockingStub(channel);
     }
@@ -43,10 +43,10 @@ public class RpsGameClient {
     private static Move parseMove(String input) {
         String s = input.toLowerCase(Locale.ROOT).trim();
         return switch (s) {
-            case "r", "rock", "pedra" -> Move.ROCK;
-            case "p", "paper", "papel" -> Move.PAPER;
-            case "s", "scissors", "tesoura" -> Move.SCISSORS;
-            default -> Move.MOVE_UNSPECIFIED;
+            case "r", "rock", "pedra" -> Move.PEDRA;
+            case "p", "paper", "papel" -> Move.PAPEL;
+            case "s", "scissors", "tesoura" -> Move.TESOURA;
+            default -> Move.NAO_ESPECIFICADO;
         };
     }
 
@@ -77,7 +77,7 @@ public class RpsGameClient {
                 }
 
                 Move move = parseMove(line);
-                if (move == Move.MOVE_UNSPECIFIED) {
+                if (move == Move.NAO_ESPECIFICADO) {
                     System.out.println("Jogada inválida. Use pedra, papel ou tesoura.");
                     continue;
                 }

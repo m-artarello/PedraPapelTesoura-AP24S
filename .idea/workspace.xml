@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2d5e0f3-fbe6-4636-b6cc-563259c89bcd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/RpsGameClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/RpsGameServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/proto/rps.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/RpsGameClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/RpsGameClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/RpsGameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/RpsGameServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/proto/rps.proto" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/proto/rps.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +45,7 @@
     <configuration name="RpsGameClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.RpsGameClient" />
       <module name="PedraPapelTesoura" />
-      <option name="PROGRAM_PARAMETERS" value="127.0.0.2 50051" />
+      <option name="PROGRAM_PARAMETERS" value="192.168.3.17 50051" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.*" />
